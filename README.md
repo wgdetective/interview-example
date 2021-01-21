@@ -1,6 +1,6 @@
-#Wladimir Litvinov Java Interview Example
+# Wladimir Litvinov Java Interview Example
 
-##Description
+## Description
 Rest application for simple elections.
 User can get list of candidates.
 User can vote for candidate.
@@ -13,8 +13,8 @@ Results are stored in application memory.
 
 System should have a good architecture.
 
-##User stories
-###1) As a User, I want to get the list of candidates so that I can vote.
+## User stories
+### 1) As a User, I want to get the list of candidates so that I can vote.
 
 Request:
 `GET v1/candidates`
@@ -38,7 +38,7 @@ Response:
 ]
 ```
 
-###2) As a User, I want to vote for the candidate so that number of voices changed.
+### 2) As a User, I want to vote for the candidate so that number of voices changed.
 
 Request:
 `POST v1/vote`
@@ -58,7 +58,7 @@ Response:
 }
 ```
 
-####Corner cases:
+#### Corner cases:
 - candidateId should be validated, if there is not such candidate User should get such response:
   `400 Bad Request`
 ```json
@@ -74,7 +74,7 @@ Response:
 }
 ```
 
-###3) As a User, I want to get current elections results, and I get them.
+### 3) As a User, I want to get current elections results, and I get them.
 
 Request:
 `GET v1/results`
