@@ -2,8 +2,8 @@ package com.wgdetective.interviewexample;
 
 import com.wgdetective.interviewexample.controller.ElectionsController;
 import com.wgdetective.interviewexample.repository.CleanableInMemoryVoteRepository;
-import com.wgdetective.interviewexample.repository.JsonCandidateRepository;
 import com.wgdetective.interviewexample.repository.InMemoryVoteRepository;
+import com.wgdetective.interviewexample.repository.JsonCandidateRepository;
 import com.wgdetective.interviewexample.service.CandidateService;
 import com.wgdetective.interviewexample.service.VoteService;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,7 +19,8 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 @ExtendWith(SpringExtension.class)
 @WebFluxTest(controllers = ElectionsController.class)
-@Import({CandidateService.class, JsonCandidateRepository.class, VoteService.class, InMemoryVoteRepository.class, CleanableInMemoryVoteRepository.class})
+@Import({CandidateService.class, JsonCandidateRepository.class, VoteService.class, InMemoryVoteRepository.class,
+        CleanableInMemoryVoteRepository.class})
 @ActiveProfiles("test")
 public class ElectionsTest {
 

@@ -12,7 +12,7 @@ class JsonCandidateRepositoryTest {
 
     @Test
     public void testReadFromJson() {
-        final JsonCandidateRepository repository = new JsonCandidateRepository();
+        final JsonCandidateRepository repository = new JsonCandidateRepository("candidates.json");
         final List<Candidate> candidatesList = repository.getCandidatesList().block();
         assertNotNull(candidatesList);
         assertEquals(3, candidatesList.size());
