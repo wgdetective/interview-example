@@ -1,9 +1,10 @@
-package com.wgdetective.interviewexample.repository;
+package com.wgdetective.interviewexample.repository.impl;
 
 import com.wgdetective.interviewexample.entity.Candidate;
 import com.wgdetective.interviewexample.dto.VoteRequest;
 import com.wgdetective.interviewexample.entity.Vote;
 import com.wgdetective.interviewexample.exception.DuplicateVoteException;
+import com.wgdetective.interviewexample.repository.VoteRepository;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -19,7 +20,7 @@ public class InMemoryVoteRepository implements VoteRepository {
     protected final Map<Candidate, Set<Vote>> data = new HashMap<>();
 
     @Override
-    public Mono<Void> save(final VoteRequest voteRequest, final Candidate candidate) throws DuplicateVoteException {
+    public Mono<Void> save(final VoteRequest voteRequest, final Candidate candidate) {
         final Vote vote = new Vote();
         vote.setName(voteRequest.getName());
         vote.setPassport(voteRequest.getPassport());

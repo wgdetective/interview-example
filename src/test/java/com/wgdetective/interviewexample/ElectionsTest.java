@@ -1,9 +1,9 @@
 package com.wgdetective.interviewexample;
 
 import com.wgdetective.interviewexample.controller.ElectionsController;
-import com.wgdetective.interviewexample.repository.CleanableInMemoryVoteRepository;
-import com.wgdetective.interviewexample.repository.InMemoryVoteRepository;
-import com.wgdetective.interviewexample.repository.JsonCandidateRepository;
+import com.wgdetective.interviewexample.repository.impl.CleanableInMemoryVoteRepository;
+import com.wgdetective.interviewexample.repository.impl.InMemoryVoteRepository;
+import com.wgdetective.interviewexample.repository.impl.JsonCandidateRepository;
 import com.wgdetective.interviewexample.service.CandidateService;
 import com.wgdetective.interviewexample.service.VoteService;
 import org.junit.jupiter.api.BeforeEach;

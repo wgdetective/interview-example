@@ -1,4 +1,4 @@
-package com.wgdetective.interviewexample.repository;
+package com.wgdetective.interviewexample.repository.impl;
 
 import java.util.Set;
 import org.springframework.context.annotation.Profile;
