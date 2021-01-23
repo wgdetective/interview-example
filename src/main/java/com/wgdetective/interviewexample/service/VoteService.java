@@ -3,17 +3,16 @@ package com.wgdetective.interviewexample.service;
 import com.wgdetective.interviewexample.CalculatePercentageUtil;
 import com.wgdetective.interviewexample.dto.Candidate;
 import com.wgdetective.interviewexample.dto.ResultResponse;
+import com.wgdetective.interviewexample.entity.Vote;
 import com.wgdetective.interviewexample.dto.VoteRequest;
 import com.wgdetective.interviewexample.exception.UnknownCandidateException;
 import com.wgdetective.interviewexample.repository.CandidateRepository;
-import com.wgdetective.interviewexample.repository.InMemoryVoteRepository;
 import com.wgdetective.interviewexample.repository.VoteRepository;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-import javax.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
@@ -46,7 +45,7 @@ public class VoteService {
     }
 
     private ResultResponse convertResult(final long totalCount,
-            final java.util.Map.Entry<Candidate, Set<com.wgdetective.interviewexample.dto.Vote>> e) {
+            final java.util.Map.Entry<Candidate, Set<Vote>> e) {
         final ResultResponse result = new ResultResponse();
         result.setId(e.getKey().getId());
         result.setName(e.getKey().getName());

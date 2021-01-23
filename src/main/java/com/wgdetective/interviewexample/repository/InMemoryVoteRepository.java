@@ -1,7 +1,7 @@
 package com.wgdetective.interviewexample.repository;
 
 import com.wgdetective.interviewexample.dto.Candidate;
-import com.wgdetective.interviewexample.dto.Vote;
+import com.wgdetective.interviewexample.entity.Vote;
 import com.wgdetective.interviewexample.dto.VoteRequest;
 import com.wgdetective.interviewexample.exception.DuplicateVoteException;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.wgdetective.interviewexample.dto;
+package com.wgdetective.interviewexample.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

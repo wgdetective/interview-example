@@ -1,6 +1,5 @@
 package com.wgdetective.interviewexample.dto;
 
-import lombok.Builder;
 import lombok.Data;
 
 @Data
