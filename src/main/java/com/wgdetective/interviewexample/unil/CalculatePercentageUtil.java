@@ -1,4 +1,4 @@
-package com.wgdetective.interviewexample;
+package com.wgdetective.interviewexample.unil;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

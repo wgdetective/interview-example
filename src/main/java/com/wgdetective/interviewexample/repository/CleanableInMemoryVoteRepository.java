@@ -2,10 +2,10 @@ package com.wgdetective.interviewexample.repository;
 
 import java.util.Set;
 import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 @Profile("test")
-@Component
+@Repository
 public class CleanableInMemoryVoteRepository extends InMemoryVoteRepository {
 
     public void clean() {

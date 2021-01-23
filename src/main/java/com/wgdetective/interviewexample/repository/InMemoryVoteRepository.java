@@ -1,19 +1,19 @@
 package com.wgdetective.interviewexample.repository;
 
 import com.wgdetective.interviewexample.dto.Candidate;
-import com.wgdetective.interviewexample.entity.Vote;
 import com.wgdetective.interviewexample.dto.VoteRequest;
+import com.wgdetective.interviewexample.entity.Vote;
 import com.wgdetective.interviewexample.exception.DuplicateVoteException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
 @Profile("!test")
-@Component
+@Repository
 public class InMemoryVoteRepository implements VoteRepository {
 
     protected final Map<Candidate, Set<Vote>> data = new HashMap<>();

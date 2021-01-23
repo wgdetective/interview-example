@@ -1,8 +1,6 @@
 package com.wgdetective.interviewexample.util;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import com.wgdetective.interviewexample.CalculatePercentageUtil;
+import com.wgdetective.interviewexample.unil.CalculatePercentageUtil;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import org.junit.jupiter.api.Assertions;

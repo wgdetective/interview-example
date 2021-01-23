@@ -1,13 +1,13 @@
 package com.wgdetective.interviewexample.service;
 
-import com.wgdetective.interviewexample.CalculatePercentageUtil;
 import com.wgdetective.interviewexample.dto.Candidate;
 import com.wgdetective.interviewexample.dto.ResultResponse;
-import com.wgdetective.interviewexample.entity.Vote;
 import com.wgdetective.interviewexample.dto.VoteRequest;
+import com.wgdetective.interviewexample.entity.Vote;
 import com.wgdetective.interviewexample.exception.UnknownCandidateException;
 import com.wgdetective.interviewexample.repository.CandidateRepository;
 import com.wgdetective.interviewexample.repository.VoteRepository;
+import com.wgdetective.interviewexample.unil.CalculatePercentageUtil;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
