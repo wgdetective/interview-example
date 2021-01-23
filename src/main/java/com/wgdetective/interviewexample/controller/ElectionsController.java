@@ -1,14 +1,15 @@
 package com.wgdetective.interviewexample.controller;
 
-import com.wgdetective.interviewexample.dto.Candidate;
+import com.wgdetective.interviewexample.dto.CandidateResponse;
 import com.wgdetective.interviewexample.dto.ResultResponse;
-import com.wgdetective.interviewexample.dto.ResultWithMessage;
+import com.wgdetective.interviewexample.dto.ResultWithMessageResponse;
 import com.wgdetective.interviewexample.dto.VoteRequest;
 import com.wgdetective.interviewexample.exception.DuplicateVoteException;
 import com.wgdetective.interviewexample.exception.UnknownCandidateException;
 import com.wgdetective.interviewexample.service.CandidateService;
 import com.wgdetective.interviewexample.service.VoteService;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,16 +26,20 @@ public class ElectionsController {
     private final VoteService voteService;
 
     @GetMapping("/v1/candidates")
-    public Mono<List<Candidate>> getCandidatesList() {
-        return candidateService.getCandidatesList();
+    public Mono<List<CandidateResponse>> getCandidatesList() {
+        return candidateService.getCandidatesList()
+                .map(list -> list.stream().map(c -> new CandidateResponse(c.getId(), c.getName())).collect(
+                        Collectors.toList()));
     }
 
     @PostMapping("/v1/vote")
-    public Mono<ResponseEntity<ResultWithMessage>> vote(@RequestBody final VoteRequest voteRequest) {
+    public Mono<ResponseEntity<ResultWithMessageResponse>> vote(@RequestBody final VoteRequest voteRequest) {
         return voteService.vote(voteRequest)
-                .then(Mono.just(ResponseEntity.ok(new ResultWithMessage("Your voice was accepted."))))
-                .onErrorReturn(UnknownCandidateException.class, ResponseEntity.badRequest().body(new ResultWithMessage("Error: there is no such candidate.")))
-                .onErrorReturn(DuplicateVoteException.class, ResponseEntity.badRequest().body(new ResultWithMessage("Error: you already voted.")));
+                .then(Mono.just(ResponseEntity.ok(new ResultWithMessageResponse("Your voice was accepted."))))
+                .onErrorReturn(UnknownCandidateException.class,
+                        ResponseEntity.badRequest().body(new ResultWithMessageResponse("Error: there is no such candidate.")))
+                .onErrorReturn(DuplicateVoteException.class,
+                        ResponseEntity.badRequest().body(new ResultWithMessageResponse("Error: you already voted.")));
     }
 
     @GetMapping("/v1/results")

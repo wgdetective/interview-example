@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ResultWithMessage {
-    private String message;
+public class CandidateResponse {
+    private Long id;
+    private String name;
 }

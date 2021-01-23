@@ -3,9 +3,8 @@ package com.wgdetective.interviewexample.repository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.wgdetective.interviewexample.dto.Candidate;
+import com.wgdetective.interviewexample.entity.Candidate;
 import java.util.List;
-import org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class JsonCandidateRepositoryTest {

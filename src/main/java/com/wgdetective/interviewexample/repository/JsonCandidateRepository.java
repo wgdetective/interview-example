@@ -2,7 +2,7 @@ package com.wgdetective.interviewexample.repository;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wgdetective.interviewexample.dto.Candidate;
+import com.wgdetective.interviewexample.entity.Candidate;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;

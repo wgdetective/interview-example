@@ -1,6 +1,6 @@
 package com.wgdetective.interviewexample.service;
 
-import com.wgdetective.interviewexample.dto.Candidate;
+import com.wgdetective.interviewexample.entity.Candidate;
 import com.wgdetective.interviewexample.repository.CandidateRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

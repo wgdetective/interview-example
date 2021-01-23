@@ -1,6 +1,6 @@
 package com.wgdetective.interviewexample.service;
 
-import com.wgdetective.interviewexample.dto.Candidate;
+import com.wgdetective.interviewexample.entity.Candidate;
 import com.wgdetective.interviewexample.dto.ResultResponse;
 import com.wgdetective.interviewexample.dto.VoteRequest;
 import com.wgdetective.interviewexample.entity.Vote;
